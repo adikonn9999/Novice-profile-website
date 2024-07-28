@@ -1,0 +1,311 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e;
+    color: #fff;
+    font-weight: bold; /* Make all text bold */
+    overflow-x: hidden;
+}
+
+header {
+    background-color: transparent; /* Make header background transparent */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+nav {
+    background-color: transparent; /* Make nav background transparent */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #4a90e2;
+}
+
+.hero {
+    padding: 20px 20px 0; /* Remove bottom padding */
+    text-align: center;
+}
+
+h1 {
+    font-size: 6em; /* Increase font size by 1.5 times */
+    margin: 0;
+    animation: fadeIn 1.5s ease-in-out;
+    text-shadow: 3px 3px 5px #000000;
+}
+
+.typing-effect-container {
+    display: inline-block;
+    position: relative;
+}
+
+.typing-effect {
+    font-size: 2.2em;
+    margin-top: -5px;
+    margin-bottom: -2px;
+    color: #f8d90f;
+    height: 60px;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+}
+
+.typing-effect::after {
+    content: '|';
+    position: absolute;
+    right: -0.15em; /* Adjust position to ensure cursor is right next to the text */
+    font-weight: bold;
+    font-size: 1cm; /* Adjust the cursor thickness */
+    color: #f8d90f;
+    line-height: 1; /* Ensure cursor height matches the text */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+section {
+    padding: 20px 20px; /* Reduce top padding */
+    max-width: 800px;
+    margin: auto;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center; /* Center align the content of each tab */
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+
+h2 {
+    position:relative;
+    font-size: 2em;
+    color: #4a90e2;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: transparent; /* Remove background color */
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+li {
+    background-color: rgba(0, 0, 0, 0.3); /* Base opacity set to 30% */
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+li:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.6); /* Hover opacity set to 60% */
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+
+footer a {
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; /* Make background non-scrollable */
+}
+
+#bg-home {
+    background-image: url('images/bg2.png');
+}
+
+#bg-skills {
+    background-image: url('images/bg3.png');
+    overflow: hidden; /* Make skills tab background non-scrollable */
+}
+
+#bg-contact {
+    background-image: url('images/Contact.png');
+    overflow: hidden;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    overflow: hidden; /* Make video background non-scrollable */
+}
+
+/* Home and Contact Tabs - Keep as they were */
+#home .card,
+#contact .card {
+    background-color: rgba(0, 0, 0, 0.3); /* Base opacity set to 30% */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+#home .card:hover,
+#contact .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    background-color: rgba(0, 0, 0, 0.5); /* Hover opacity set to 60% */
+}
+
+/* Skills Tab - Change text background to circular, center align, and make scrollable */
+#skills .card {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: none; /* Remove box-shadow for the group */
+    transition: none; /* Remove transition for the group */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Ensure the card is scrollable */
+    max-height: 80vh; /* Limit the height to 80% of the viewport height */
+    scrollbar-width: none;
+}
+
+#skills .card:hover {
+    transform: none; /* Remove transform for the group */
+    box-shadow: none; /* Remove box-shadow for the group */
+}
+
+#skills ul {
+    display: block;
+    text-align: center; /* Center align the content */
+    padding-right: 15px; /* Add padding to ensure scrollbar is hidden */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+#skills ul::-webkit-scrollbar {
+    width: 0; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+#skills li {
+    background-color: rgba(0, 0, 0, 0.3); /* Base opacity set to 30% */
+    margin: 40px; /* Add some margin to place them below each other with distance */
+    width: 100px; /* Adjust width to make it circular */
+    height: 100px; /* Adjust height to make it circular */
+    border-radius: 100%; /* Make the background shape circular */
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.1); /* Apply box shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex; /* Flexbox to center text */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    text-align: center; /* Center align text */
+    font-size: 1.2em; /* Adjust font size to fit inside the circle */
+}
+
+#skills li:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.8); /* Hover opacity set to 60% */
+}
+
+.job {
+    background-color: rgba(0, 0, 0, 0.3); /* Base opacity set to 30% */
+    border-radius: 0; /* Make the background shape square */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px; /* Increase padding for a square shape */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.job:hover {
+    transform: translateY(-5px);
+    background-color: rgba(0, 0, 0, 0.8); /* Hover opacity set to 60% */
+}
+
+section.tab-content {
+    overflow-y: auto; /* Make the content scrollable */
+    max-height: 80vh; /* Limit the height to 80% of the viewport height */
+}
+
+/* Hide scrollbar for all browsers */
+section.tab-content::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+section.tab-content {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Parallax effect for the hand image */
+.parallax {
+    position: fixed;
+    right: -700px;
+    bottom: -250px;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+}
+
+.parallax-hand2, .parallax-hand3 {
+    position: fixed;
+    height: auto;
+    max-width: 360px;
+}
+
+.parallax-hand2 {
+    top: 30%;
+    left: 10%;
+}
+
+.parallax-hand3 {
+    top: 10%;
+    right: 10%
+}
